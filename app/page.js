@@ -33,6 +33,7 @@ export default function Home() {
       >
         <div className={styles.nutrientImageWrapper}>
           <Image
+            key={chosenProductNutrients}
             src={chosenProductNutrients}
             fill
             alt={chosenProductNutrients}

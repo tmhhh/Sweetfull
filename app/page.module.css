@@ -47,8 +47,8 @@
 }
 
 .nutrientImageWrapper {
-  width: 70vw;
-  height: 60vh;
+  width: 48vw;
+  height: 80vh;
   position: relative;
   left: 50%;
   transform: translateX(-50%);
