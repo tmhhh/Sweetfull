@@ -2,11 +2,10 @@
 import Image from "next/image";
 import { useState } from "react";
 
-import { Modal, Col, Row } from "antd";
-import { CloseOutlined } from "@ant-design/icons";
+import { Modal } from "antd";
 
-import styles from "./page.module.css";
 import { Body, Footer, Heading } from "./components";
+import styles from "./page.module.css";
 export default function Home() {
   const [chosenProductNutrients, setChosenProductNutrients] = useState(null);
 
@@ -18,45 +17,37 @@ export default function Home() {
     setChosenProductNutrients(null);
   };
   return (
-    <Row>
-      <Col xs={0} sm={4} md={6} lg={8} xl={8} />
-      <Col xs={24} sm={16} md={12} lg={8} xl={7}>
-        <main className={styles.main}>
-          <Heading />
+    <main className={styles.main}>
+      <Heading />
 
-          <Body
-            onOpenModal={handleOpenProduct}
-            onCloseModal={handleCloseProduct}
-          />
+      <Body onOpenModal={handleOpenProduct} onCloseModal={handleCloseProduct} />
 
-          <Footer />
+      <Footer />
 
-          <Modal
-            onCancel={handleCloseProduct}
-            open={chosenProductNutrients !== null}
-            closeIcon={false}
-            centered
-            footer={null}
-          >
-            <>
-              <CloseOutlined
-                className={styles.closeIcon}
-                onClick={handleCloseProduct}
-              />
-              <div className={styles.nutrientImageWrapper}>
-                <Image
-                  style={{ objectFit: "scale-down" }}
-                  key={chosenProductNutrients}
-                  src={chosenProductNutrients}
-                  fill
-                  alt={chosenProductNutrients}
-                />
-              </div>
-            </>
-          </Modal>
-        </main>
-      </Col>
-      <Col xs={0} sm={4} md={6} lg={8} xl={8} />
-    </Row>
+      <Modal
+        onCancel={handleCloseProduct}
+        open={chosenProductNutrients !== null}
+        styles={{
+          content: {
+            minWidth: "330px",
+            width: "40%",
+            aspectRatio: 1,
+            position: "fixed",
+            left: "50%",
+            top: "50%",
+            transform: "translate(-50%,-50%)",
+          },
+        }}
+        centered
+        footer={null}
+      >
+        <Image
+          key={chosenProductNutrients}
+          src={chosenProductNutrients}
+          fill
+          alt={chosenProductNutrients}
+        />
+      </Modal>
+    </main>
   );
 }
