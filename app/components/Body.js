@@ -5,9 +5,6 @@ import { products } from "../data/mock";
 import styles from "../page.module.css";
 
 function Body({ onOpenModal }) {
-  if (Object.keys(products).length % 2 !== 0) {
-    products["Empty"] = [];
-  }
   return (
     <Flex wrap="wrap" gap="large" justify="center">
       {Object.keys(products).map((product, i) => {

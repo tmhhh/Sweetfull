@@ -27,17 +27,7 @@ export default function Home() {
       <Modal
         onCancel={handleCloseProduct}
         open={chosenProductNutrients !== null}
-        styles={{
-          content: {
-            minWidth: "330px",
-            width: "40%",
-            aspectRatio: 1,
-            position: "fixed",
-            left: "50%",
-            top: "50%",
-            transform: "translate(-50%,-50%)",
-          },
-        }}
+        className={styles.content}
         centered
         footer={null}
       >

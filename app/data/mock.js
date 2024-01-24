@@ -1,4 +1,4 @@
-export const products = {
+const data = {
   "Sua hat dieu": [
     {
       coverSrc: "/COVER/1.png",
@@ -106,3 +106,8 @@ export const products = {
     },
   ],
 };
+
+export const products =
+  Object.keys(data).length % 2 === 0
+    ? data
+    : Object.assign(data, { Empty: [] });
