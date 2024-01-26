@@ -13,7 +13,6 @@ function Body({ onOpenModal }) {
             <Carousel
               className={styles.carousel}
               style={i % 2 && { transform: "translateY(50%)" }}
-              dots={false}
               autoplay={true}
               draggable
             >
