@@ -20,6 +20,7 @@ function Body({ onOpenModal }) {
                 ({ coverSrc, nutrientSrc }, productCate) => (
                   <div className={styles.productWrapper} key={productCate}>
                     <Image
+                      priority
                       src={coverSrc}
                       fill
                       alt={coverSrc}
