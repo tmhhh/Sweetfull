@@ -34,6 +34,7 @@ export default function Home() {
           className={styles.content}
           centered
           footer={null}
+          getContainer={false}
         >
           <Image
             key={chosenProductNutrients}
