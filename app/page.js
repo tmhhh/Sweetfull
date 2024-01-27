@@ -17,33 +17,28 @@ export default function Home() {
     setChosenProductNutrients(null);
   };
   return (
-    <Flex className={styles.container}>
-      <main className={styles.main}>
-        <Heading />
+    <main className={styles.main}>
+      <Heading />
 
-        <Body
-          onOpenModal={handleOpenProduct}
-          onCloseModal={handleCloseProduct}
+      <Body onOpenModal={handleOpenProduct} onCloseModal={handleCloseProduct} />
+
+      <Footer />
+
+      <Modal
+        onCancel={handleCloseProduct}
+        open={chosenProductNutrients !== null}
+        className={styles.content}
+        centered
+        footer={null}
+        getContainer={false}
+      >
+        <Image
+          key={chosenProductNutrients}
+          src={chosenProductNutrients}
+          fill
+          alt={chosenProductNutrients}
         />
-
-        <Footer />
-
-        <Modal
-          onCancel={handleCloseProduct}
-          open={chosenProductNutrients !== null}
-          className={styles.content}
-          centered
-          footer={null}
-          getContainer={false}
-        >
-          <Image
-            key={chosenProductNutrients}
-            src={chosenProductNutrients}
-            fill
-            alt={chosenProductNutrients}
-          />
-        </Modal>
-      </main>
-    </Flex>
+      </Modal>
+    </main>
   );
 }
