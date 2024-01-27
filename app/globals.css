@@ -8,6 +8,9 @@
   src: url("https://w.ladicdn.com/658100db8b88b6002c8524f9/notoserifdisplay-variablefont_wdthwght-20240102135547-inypy.ttf")
     format("truetype");
 }
+html,
+body {
+}
 
 * {
   box-sizing: border-box;

@@ -6,13 +6,18 @@ import styles from "../page.module.css";
 
 function Body({ onOpenModal }) {
   return (
-    <Flex wrap="wrap" gap="large" justify="center">
+    <Flex
+      className={styles.carouselContainer}
+      wrap="wrap"
+      gap="large"
+      justify="center"
+    >
       {Object.keys(products).map((product, i) => {
         return (
           <div className={styles.carouselWrapper} key={i}>
             <Carousel
+              key={i}
               className={styles.carousel}
-              style={i % 2 && { transform: "translateY(50%)" }}
               autoplay={true}
               draggable
             >
@@ -20,7 +25,7 @@ function Body({ onOpenModal }) {
                 ({ coverSrc, nutrientSrc }, productCate) => (
                   <div className={styles.productWrapper} key={productCate}>
                     <Image
-                      // priority
+                      priority
                       src={coverSrc}
                       fill
                       alt={coverSrc}
