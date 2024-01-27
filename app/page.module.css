@@ -2,7 +2,6 @@
   --carousel-width: 167px;
   --carousel-height: 300px;
   --spacing: 12px;
-  --items-per-row: 5;
   min-height: 100vh;
   overflow: hidden;
   width: 420px;
@@ -69,8 +68,10 @@
   display: flex;
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 834px) {
   .main {
+    --items-per-row: 4;
+
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -79,6 +80,7 @@
 
   .headerContainer {
     width: 30%;
+    min-width: 375px;
     margin: 0 auto;
   }
 
@@ -96,5 +98,11 @@
     display: none;
   }
   .footer {
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .main {
+    --items-per-row: 5;
   }
 }
