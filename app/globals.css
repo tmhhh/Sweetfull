@@ -25,6 +25,7 @@ a {
 
 .ant-modal {
   width: auto !important;
+  transform-origin: 50% 50% 0 !important;
 }
 
 .ant-modal-content {

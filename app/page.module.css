@@ -56,12 +56,14 @@
 }
 
 .content :global .ant-modal-content {
+  transform-origin: 50% 50% 0 !important;
+
   min-width: 330px !important;
   width: 40vw !important;
   position: fixed !important;
-  left: calc(50% - 20vw) !important;
-  top: calc(50% - 20vw) !important;
-  /* transform: translate(-50%, -50%) !important; */
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
   aspect-ratio: 1 !important;
 }
 .footer {
