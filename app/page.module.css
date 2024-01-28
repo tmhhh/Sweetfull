@@ -2,11 +2,15 @@
   --carousel-width: 167px;
   --carousel-height: 300px;
   --spacing: 12px;
+
   min-height: 100vh;
-  overflow: hidden;
-  width: 420px;
+  max-width: 420px;
+  min-width: 360px;
+  /* width: 100%; auto for block elemet*/
   margin: 0 auto;
   background-color: var(--background-color);
+
+  overflow: hidden;
 }
 
 .headerContainer {
@@ -57,7 +61,7 @@
   /* position: relative !important; */
   /* left: 50% !important; */
   /* top: 50% !important; */
-  /* transform: translate(-50%, -50%) !important; */
+  /* transform: translate(-50%, -50%) !important; no need as Ui component already supported */
   aspect-ratio: 1 !important;
 }
 .footer {
@@ -74,7 +78,7 @@
   .main {
     --items-per-row: 4;
 
-    width: 100vw;
+    max-width: none;
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { useState } from "react";
 
-import { Modal, Flex } from "antd";
+import { Modal } from "antd";
 
 import { Body, Footer, Heading } from "./components";
 import styles from "./page.module.css";
@@ -17,13 +17,17 @@ export default function Home() {
     setChosenProductNutrients(null);
   };
   return (
-    <main className={styles.main}>
-      <Heading />
+    <>
+      <main className={styles.main}>
+        <Heading />
 
-      <Body onOpenModal={handleOpenProduct} onCloseModal={handleCloseProduct} />
+        <Body
+          onOpenModal={handleOpenProduct}
+          onCloseModal={handleCloseProduct}
+        />
 
-      <Footer />
-
+        <Footer />
+      </main>
       <Modal
         onCancel={handleCloseProduct}
         open={chosenProductNutrients !== null}
@@ -39,6 +43,6 @@ export default function Home() {
           alt={chosenProductNutrients}
         />
       </Modal>
-    </main>
+    </>
   );
 }
