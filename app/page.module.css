@@ -1,12 +1,13 @@
 .main {
   --carousel-width: 167px;
   --carousel-height: 300px;
-  --spacing: 12px;
+  --spacing: 24px;
+  --items-per-row: 0;
 
   min-height: 100vh;
   max-width: 420px;
   min-width: 360px;
-  /* width: 100%; auto for block elemet*/
+  /* width: 100%; auto for block element*/
   margin: 0 auto;
   background-color: var(--background-color);
 
@@ -34,13 +35,21 @@
   border-block-start: 2px solid var(--text-color) !important;
 }
 
+.carouselContainer {
+  --items-per-row: 2;
+
+  flex-wrap: wrap;
+  gap: var(--spacing);
+  margin: 0 auto;
+  width: calc(
+    var(--carousel-width) * var(--items-per-row) + var(--spacing) *
+      calc(var(--items-per-row) - 1)
+  );
+}
 .carouselWrapper:nth-child(even) {
   transform: translateY(50%);
 }
-.carouselWrapper:last-child {
-  opacity: 0;
-  visibility: hidden;
-}
+
 .carousel {
   cursor: pointer;
   border-radius: 8px;
@@ -65,7 +74,10 @@
   aspect-ratio: 1 !important;
 }
 .footer {
-  margin-top: 20px;
+  margin-top: var(--spacing);
+}
+.evenProductLengthFooter {
+  margin-top: calc(var(--carousel-height) * 50 / 100 + var(--spacing));
 }
 
 .socialInfo {
@@ -76,8 +88,6 @@
 }
 @media only screen and (min-width: 768px) {
   .main {
-    --items-per-row: 4;
-
     max-width: none;
     display: flex;
     flex-direction: column;
@@ -91,24 +101,16 @@
   }
 
   .carouselContainer {
-    width: calc(
-      var(--carousel-width) * var(--items-per-row) + var(--spacing) *
-        var(--items-per-row) * 2
-    );
-    margin: 0 auto;
+    --items-per-row: 3;
   }
   .carouselWrapper {
     transform: translate(0) !important;
   }
-  .carouselWrapper:last-child {
-    display: none;
-  }
-  .footer {
-  }
 }
 
 @media only screen and (min-width: 1024px) {
-  .main {
+  .carouselContainer {
     --items-per-row: 5;
+    justify-content: center;
   }
 }

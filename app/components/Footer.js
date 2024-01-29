@@ -1,12 +1,17 @@
 import Image from "next/image";
 import { Flex, Typography } from "antd";
+import { isEvenProductLength } from "../data/mock.js";
 const { Link } = Typography;
-
 import styles from "../page.module.css";
 
 function Footer() {
   return (
-    <Flex className={styles.footer} justify="center">
+    <Flex
+      className={`${styles.footer} ${
+        isEvenProductLength && styles.evenProductLengthFooter
+      } `}
+      justify="center"
+    >
       <Link
         className={styles.socialInfo}
         href="https://www.facebook.com/sweetfull23"

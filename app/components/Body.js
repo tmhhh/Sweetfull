@@ -6,12 +6,7 @@ import styles from "../page.module.css";
 
 function Body({ onOpenModal }) {
   return (
-    <Flex
-      className={styles.carouselContainer}
-      wrap="wrap"
-      gap="large"
-      justify="center"
-    >
+    <Flex className={styles.carouselContainer}>
       {Object.keys(products).map((product, i) => {
         return (
           <div className={styles.carouselWrapper} key={i}>

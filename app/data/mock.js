@@ -1,4 +1,4 @@
-const data = {
+export const products = {
   "Sua hat dieu": [
     {
       coverSrc:
@@ -177,7 +177,4 @@ const data = {
   ],
 };
 
-export const products =
-  Object.keys(data).length % 2 === 0
-    ? data
-    : Object.assign(data, { Empty: [] });
+export const isEvenProductLength = Object.keys(products).length % 2 === 0;
