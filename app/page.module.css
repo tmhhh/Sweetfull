@@ -74,7 +74,7 @@
 .socialInfo:last-child {
   transform: translateY(-7px);
 }
-@media only screen and (min-width: 834px) {
+@media only screen and (min-width: 768px) {
   .main {
     --items-per-row: 4;
 
